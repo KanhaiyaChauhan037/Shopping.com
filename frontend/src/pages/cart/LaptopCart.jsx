@@ -75,8 +75,8 @@ const itemDelete = async (id) => {
 const LaptopCart = () => {
   const [data, setData] = useState([]);
   const toast = useToast();
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const cancelRef = React.useRef()
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const cancelRef = React.useRef();
 
   useEffect(() => {
     handleTheFetch();
@@ -101,7 +101,7 @@ const LaptopCart = () => {
   };
 
   const handleTheCheckout = () => {
-    console.log("hi checkout")
+    console.log("hi checkout");
   };
 
   const handleTheDelete = async (id) => {
@@ -118,13 +118,22 @@ const LaptopCart = () => {
   };
 
   let total = data.reduce((acc, el) => acc + el.price2 * el.quantity, 0);
-  let paid = total === 0 ? 0 : data.reduce((acc, el) => acc + el.price2 * el.quantity, 0) + 100
+  let paid =
+    total === 0
+      ? 0
+      : data.reduce((acc, el) => acc + el.price2 * el.quantity, 0) + 100;
 
   return (
     <Box pt={2} mb={10}>
       <Flex mb={2} justifyContent={"center"}>
         <Image w={"80px"} src="https://i.postimg.cc/VsRDYtym/cart-logo.jpg" />
-        <Image mt={3} w={"250px"} h={"40px"} src="https://i.postimg.cc/pXCJZgQD/shopping-Png.png" />>
+        <Image
+          mt={3}
+          w={"250px"}
+          h={"40px"}
+          src="https://i.postimg.cc/pXCJZgQD/shopping-Png.png"
+        />
+        
       </Flex>
       <Flex justifyContent={"center"}>
         {/* Products  */}
@@ -144,11 +153,16 @@ const LaptopCart = () => {
             </Center>
             {data &&
               data.map((prod, i) => (
-                <Box m={1} key={i} borderBottom={"1px"} borderColor={"gray.300"}>
-                  <Flex justifyContent={"space-between"} >
+                <Box
+                  m={1}
+                  key={i}
+                  borderBottom={"1px"}
+                  borderColor={"gray.300"}
+                >
+                  <Flex justifyContent={"space-between"}>
                     {/* Image Box  */}
-                    <Flex w={"80%"} justifyContent={"space-between"} gap={1} >
-                      <Box w={"35%"}  p={2}>
+                    <Flex w={"80%"} justifyContent={"space-between"} gap={1}>
+                      <Box w={"35%"} p={2}>
                         <Center>
                           <Image mt={2} src={prod.img[0]} width={"100px"} />
                         </Center>
@@ -280,7 +294,7 @@ const LaptopCart = () => {
               ))}
           </Box>
         </Box>
-          {/* Price  */}
+        {/* Price  */}
         <Box>
           <Box
             boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
@@ -291,22 +305,34 @@ const LaptopCart = () => {
           >
             <Box>
               <Flex justifyContent="space-between" fontSize={12} p="10px">
-                <Text fontWeight={500} fontSize={"16px"}>Item Total(MRP)</Text>
-                <Text fontWeight={500} fontSize={"16px"}>₹ {total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</Text>
+                <Text fontWeight={500} fontSize={"16px"}>
+                  Item Total(MRP)
+                </Text>
+                <Text fontWeight={500} fontSize={"16px"}>
+                  ₹ {total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                </Text>
               </Flex>
             </Box>
             <hr></hr>
             <Box>
               <Flex justifyContent="space-between" fontSize={12} p="10px">
-                <Text fontWeight={500} fontSize={"16px"}>Shipping Fee</Text>
-                <Text fontWeight={500} fontSize={"16px"}>₹ 100</Text>
+                <Text fontWeight={500} fontSize={"16px"}>
+                  Shipping Fee
+                </Text>
+                <Text fontWeight={500} fontSize={"16px"}>
+                  ₹ 100
+                </Text>
               </Flex>
             </Box>
             <hr></hr>
             <Box>
               <Flex justifyContent="space-between" fontSize={12} p="10px">
-                <Text fontWeight={500} fontSize={"16px"}>To be paid</Text>
-                <Text fontWeight={500} fontSize={"16px"}>₹ {paid.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</Text>
+                <Text fontWeight={500} fontSize={"16px"}>
+                  To be paid
+                </Text>
+                <Text fontWeight={500} fontSize={"16px"}>
+                  ₹ {paid.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                </Text>
               </Flex>
             </Box>
           </Box>
@@ -325,9 +351,16 @@ const LaptopCart = () => {
           </Button>
         </Box>
       </Flex>
-      
-       <LaptopCheckout handleTheFetch={handleTheFetch} totalPrice={paid} cart={data} cancelRef={cancelRef} isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
-      
+
+      <LaptopCheckout
+        handleTheFetch={handleTheFetch}
+        totalPrice={paid}
+        cart={data}
+        cancelRef={cancelRef}
+        isOpen={isOpen}
+        onOpen={onOpen}
+        onClose={onClose}
+      />
     </Box>
   );
 };

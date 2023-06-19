@@ -100,21 +100,25 @@ const GrocerySlider = () => {
           overflow={"hidden"}
           backgroundImage={`url(https://i.postimg.cc/gj0JRv78/Screenshot-2023-02-16-025748.png)`}
           bgSize={"cover"}
-        >
-        </Box>
+        ></Box>
         <Box border={"1px"} borderColor={"gray.300"} w={"80%"}>
           <Carousel responsive={responsive}>
             {mobileData.length > 0 &&
               mobileData.map((post, i) => (
                 <Link to={`/singlepage/${post._id}`}>
-                <Box  h={200} pl={10} pr={10} key={i} pt={10}>
-                  <Center h={"100px"}>
-                    <Image width={"90px"} src={post.img[0]} />
-                  </Center>
-                  <Text mt={5} noOfLines={1} fontWeight={500} fontSize={"12px"}>
-                    {post.title}
-                  </Text>
-                </Box>
+                  <Box h={200} pl={10} pr={10} key={i} pt={10}>
+                    <Center h={"100px"}>
+                      <Image width={"90px"} src={post.img[0]} />
+                    </Center>
+                    <Text
+                      mt={5}
+                      noOfLines={1}
+                      fontWeight={500}
+                      fontSize={"12px"}
+                    >
+                      {post.title}
+                    </Text>
+                  </Box>
                 </Link>
               ))}
           </Carousel>
@@ -135,14 +139,32 @@ const GrocerySlider = () => {
             {groceryData.length > 0 &&
               groceryData.map((post, i) => (
                 <Link to={`/singlepage/${post._id}`}>
-                <Box h={200} pl={10} pr={10} key={i} pt={10}>
-                  <Center h={"100px"}>
-                    <Image width={"90px"} src={post.img[0]} />
-                  </Center>
-                  <Text mt={5} noOfLines={1} fontWeight={500} fontSize={"12px"}>
-                    {post.title}
-                  </Text>
-                </Box>
+                  <Box
+                    h={200}
+                    pl={10}
+                    pr={10}
+                    key={i}
+                    pt={10}
+                    position="absolute"
+                    transition="opacity 0.3s ease-in-out"
+                    _hover={{ opacity: 1 }}
+                  >
+                    <Center h={"100px"}>
+                      <Image
+                        width={"90px"}
+                        src={post.img[0]}
+                        transform="scale(1.2)"
+                      />
+                    </Center>
+                    <Text
+                      mt={5}
+                      noOfLines={1}
+                      fontWeight={500}
+                      fontSize={"12px"}
+                    >
+                      {post.title}
+                    </Text>
+                  </Box>
                 </Link>
               ))}
           </Carousel>
@@ -162,14 +184,19 @@ const GrocerySlider = () => {
             {homeData.length > 0 &&
               homeData.map((post, i) => (
                 <Link to={`/singlepage/${post._id}`}>
-                <Box h={200} pl={10} pr={10} key={i} pt={10}>
-                  <Center h={"100px"}>
-                    <Image width={"90px"} src={post.img[0]} />
-                  </Center>
-                  <Text mt={5} noOfLines={1} fontWeight={500} fontSize={"12px"}>
-                    {post.title}
-                  </Text>
-                </Box>
+                  <Box h={200} pl={10} pr={10} key={i} pt={10}>
+                    <Center h={"100px"}>
+                      <Image width={"90px"} src={post.img[0]} />
+                    </Center>
+                    <Text
+                      mt={5}
+                      noOfLines={1}
+                      fontWeight={500}
+                      fontSize={"12px"}
+                    >
+                      {post.title}
+                    </Text>
+                  </Box>
                 </Link>
               ))}
           </Carousel>
@@ -179,24 +206,29 @@ const GrocerySlider = () => {
       {/* Electronic  */}
       <Flex>
         <Box
-        backgroundImage={`url(https://i.postimg.cc/VLqf6Zvp/78731249.jpg)`}
-        bgSize={"cover"}
-        h={200} w={"20%"}>
-          
-        </Box>
+          backgroundImage={`url(https://i.postimg.cc/VLqf6Zvp/78731249.jpg)`}
+          bgSize={"cover"}
+          h={200}
+          w={"20%"}
+        ></Box>
         <Box border={"1px"} borderColor={"gray.300"} w={"80%"}>
           <Carousel responsive={responsive}>
             {data.length > 0 &&
               data.map((post, i) => (
                 <Link to={`/singlepage/${post._id}`}>
-                <Box h={200} pl={10} pr={10} key={i}>
-                  <Center h={"130px"}>
-                    <Image width={"100px"} src={post.img[0]} />
-                  </Center>
-                  <Text mt={5} noOfLines={1} fontWeight={500} fontSize={"12px"}>
-                    {post.title}
-                  </Text>
-                </Box>
+                  <Box h={200} pl={10} pr={10} key={i}>
+                    <Center h={"130px"}>
+                      <Image width={"100px"} src={post.img[0]} />
+                    </Center>
+                    <Text
+                      mt={5}
+                      noOfLines={1}
+                      fontWeight={500}
+                      fontSize={"12px"}
+                    >
+                      {post.title}
+                    </Text>
+                  </Box>
                 </Link>
               ))}
           </Carousel>
