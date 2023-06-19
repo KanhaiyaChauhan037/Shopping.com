@@ -1,18 +1,8 @@
-// const mongoose = require("mongoose")
-
-// const connect = async()=>{
-//     return await mongoose.connect("mongodb+srv://project:kch@cluster0.jjbg6t8.mongodb.net/")
-// }
-
-// module.exports = connect
-
-// // mongodb+srv://ace:ace123@cluster0.b04n5vc.mongodb.net/test
-
 const mongoose = require("mongoose");
 
 const connect = async () => {
     try {
-        await mongoose.connect("mongodb+srv://project:kch@cluster0.jjbg6t8.mongodb.net", {
+        await mongoose.connect(process.env.MONGO_URL, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
@@ -23,6 +13,3 @@ const connect = async () => {
 };
 
 module.exports = connect;
-
-
-

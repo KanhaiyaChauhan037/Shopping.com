@@ -53,7 +53,7 @@ app.delete("/checkout",async(req,res)=>{
     let decode = jwt.verify(token,"SECRET123")
     console.log(decode)
     const checkout = await Cart.deleteMany({userId : decode.id  })
-    res.send("Your order is placed")
+    res.send("Your order is placed within 5-7 days")
   }catch(e){
     res.send(e.message)
   }

@@ -65,6 +65,8 @@ const AdminNav = () => {
       boxShadow={"md"}
       pb={2}
       pt={2}
+      mt={"10px"}
+      mb={"2px"}
     >
       <Box onClick={onOpen}>
         <Icon style={{ cursor: "pointer" }} as={BsList} />
@@ -94,30 +96,30 @@ const AdminNav = () => {
                 // }
               >
                 <Link to={`/admin`}>
-                <Flex
-                  gap={3}
-                  pl={2}
-                  borderBottom={"1px solid"}
-                  borderColor={"gray.100"}
-                  pb={4}
-                  pt={4}
-                >
-                  <Icon
-                    color={"white"}
-                    w={6}
-                    h={6}
-                    mt={"1px"}
-                    as={FaUserLock}
-                  />
-                  <Text
-                    fontWeight={400}
-                    textAlign={"center"}
-                    fontSize={"18px"}
-                    color={"white"}
+                  <Flex
+                    gap={3}
+                    pl={2}
+                    borderBottom={"1px solid"}
+                    borderColor={"gray.100"}
+                    pb={4}
+                    pt={4}
                   >
-                    ADMIN
-                  </Text>
-                </Flex>
+                    <Icon
+                      color={"white"}
+                      w={6}
+                      h={6}
+                      mt={"1px"}
+                      as={FaUserLock}
+                    />
+                    <Text
+                      fontWeight={400}
+                      textAlign={"center"}
+                      fontSize={"18px"}
+                      color={"white"}
+                    >
+                      ADMIN
+                    </Text>
+                  </Flex>
                 </Link>
                 <Flex
                   gap={3}
@@ -171,44 +173,32 @@ const AdminNav = () => {
           </DrawerHeader>
 
           <DrawerBody>{/* Body  */}</DrawerBody>
-
-          {/* <DrawerFooter>
-            <Button variant='outline' mr={3} onClick={onClose}>
-              Cancel
-            </Button>
-            <Button colorScheme='blue'>Save</Button>
-          </DrawerFooter> */}
         </DrawerContent>
       </Drawer>
-      {/* <Flex
-        justifyContent={"space-between"}
-        ml={{ base: 10, md: 10, lg: 100 }}
-        mr={{ base: 10, md: 10, lg: 100 }}
-      > */}
       <Link to={"/admin/allproducts"}>
         <Box>
-          <Text fontSize={"10px"} fontWeight={500}>
+          <Text fontSize={"14px"} _hover={{ color: "tomato" }} fontWeight={500}>
             All Products
           </Text>
         </Box>
       </Link>
       <Link to={"/admin/addproducts"}>
         <Box>
-          <Text fontSize={"10px"} fontWeight={500}>
+          <Text fontSize={"14px"} _hover={{ color: "tomato" }} fontWeight={500}>
             Add Product
           </Text>
         </Box>
       </Link>
       <Link to={"/admin/orders"}>
         <Box>
-          <Text fontSize={"10px"} fontWeight={500}>
+          <Text fontSize={"14px"} _hover={{ color: "tomato" }} fontWeight={500}>
             Orders
           </Text>
         </Box>
       </Link>
       <Link to={"/admin/users"}>
         <Box>
-          <Text fontSize={"10px"} fontWeight={500}>
+          <Text fontSize={"14px"} _hover={{ color: "tomato" }} fontWeight={500}>
             Users
           </Text>
         </Box>

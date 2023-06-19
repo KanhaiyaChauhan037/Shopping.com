@@ -34,12 +34,12 @@ const Login = () => {
   const handleClick = () => setShow(!show);
   const [msg, setMsg] = useState("");
   const [formstate, setFormstate] = useState(initState);
-  const { isAuth, token} = useSelector((store) => store.auth);
+  const { isAuth, token } = useSelector((store) => store.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const toast = useToast();
-console.log("isauth",isAuth)
+  console.log("isauth", isAuth);
   useEffect(() => {
     if (isAuth) {
       navigate("/");
@@ -62,7 +62,9 @@ console.log("isauth",isAuth)
     >
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
-          <Heading fontSize={{base : "24px",md:"",lg:"4xl"}}>Login to your account</Heading>
+          <Heading fontSize={{ base: "24px", md: "", lg: "4xl" }}>
+            Login to your account
+          </Heading>
           <Text fontSize={"lg"} color={"gray.600"}>
             to enjoy all of our cool features ✌️
           </Text>

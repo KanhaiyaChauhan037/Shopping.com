@@ -1,8 +1,8 @@
-# Axen
+# Shopping 
 
-![Logo](https://i.postimg.cc/90Zh1SDT/Axen.png)
+![Logo]
 
-<h3 align="center">It's a Full Stack healthcare web application with all the major functionalities</h3>
+<h3 align="center">It's a Full Stack Ecommerce web application with all the major functionalities</h3>
 
 <br/>
 
@@ -33,26 +33,27 @@
   <img width="100" src="https://badges.genua.fr/badge/%F0%9F%94%BA-vercel-black" alt="vercel" />
 </p>
 
-<h3 align="center"><a href="https://axen1.vercel.app/"><strong>Want to see live preview »</strong></a></h3>
+<h3 align="center"><a href=" "><strong>Want to see live preview »</strong></a></h3>
 
-Axen 
+Shopping
 
 <br/>
 
 ## 🚀 Features
--   whole website is fully Responsive.
--   Landing Page & Footer.
--   Login and Signup Page with Express,mongodb,Nodejs & React.
--   Product Filters Based on Brand and Discount
--   Product Details in brief manner.
--   Product Sorting Based on Price, Rating and brand
--   Product Filtering and Sorting works together
--   Cart Add and Remove Items
--   Cart Update Quantities
--   Admin all users showing page 
--   Admin all products list page 
--   Admin add product form page 
--   Admin Order's list page 
+
+- whole website is fully Responsive.
+- Landing Page & Footer.
+- Login and Signup Page with Express,mongodb,Nodejs & React, Redux.
+- Product Filters Based on Brand and Discount
+- Product Details in brief manner.
+- Product Sorting Based on Price, Rating and brand
+- Product Filtering and Sorting works together
+- Cart Add and Remove Items
+- Cart Update Quantities
+- Admin all users showing page
+- Admin all products list page
+- Admin add product form page
+- Admin Order's list page
 
 ## Screenshots
 
@@ -62,90 +63,63 @@ This is the main landing page of our website. Here, if you clicked on any naviga
 
 All pages are responsive.
 
-![landing_page](https://i.postimg.cc/63pc7PB0/1.png)
+![landing_page]()
 
 ### Sign up Page -
 
-On this page, you can register a user. If the user is already registered, you can simply sign in by providing valid details of the user. 
+On this page, you can register a user. If the user is already registered, you can simply sign in by providing valid details of the user.
 
-![signup](https://i.postimg.cc/PJLMy8pv/2.png)
+![signup]()
 
-###  Login Page - 
+### Login Page -
 
-On this page, you have to login with your registered email and password .you can simply sign in by providing valid details of the user. 
+On this page, you have to login with your registered email and password .you can simply sign in by providing valid details of the user.
 
-![Login](https://i.postimg.cc/Y9D3Qx9w/3.png)
+![Login]()
 
 ### Products Page -
 
 Here users can browse, `filter` the product based on `brand and discound`, `sort` by `price or rating`, filter and sort will work togather and add items to the cart by clicking on the `Add to Cart` button.
- 
- ![product](https://i.postimg.cc/rFrJtx2v/4.png)
+
+![product]()
 
 ### SingleProduct Page -
 
-![product_details](https://i.postimg.cc/ZqTFgQvS/5.png)
+![product_details]()
 
 ### Cart Page -
 
 Here all the products added to the cart will be shown. On this page, By Clicking on add to cart your cart added successfully.
 
-![cart](https://i.postimg.cc/HLB4Ctb7/6.png)
+![cart]()
 
 ### Admin Order List Page -
 
 On this page, you can see your order details. you can `remove` the item from cart and also, `increase` or `decrease` count. By clicking on the payment button you will be redirect to the checkout page.
 
-![Order List](https://i.postimg.cc/Hsrp0WSG/orderlist.png)
+![Order List]()
 
 ### Admin All User's List Page -
 
 On This Page there is info about the site....
 
-![User List](https://i.postimg.cc/0QjG5JCX/11.png)
+![User List]()
+
 ### Admin Add Product Form Page -
 
 On This Page there is info about the site....
 
-![User List](https://i.postimg.cc/RZxT1hMq/9.png)
+![User List]()
+
 ### Admin All Product List Page -
 
 On This Page there is info about the site....
 
-![User List](https://i.postimg.cc/L8k3xSXD/8.png)
-
-
-## Run Locally
-
-Clone the project
-
-```bash
-  git clone https://github.com/Ghanishtkhurana/Axen.git
-```
-Install dependencies for frontend as well as backend
-
-```bash
-  cd frontend
-  npm install
-```
-
-```bash
-  cd backend
-  npm install
-```
-
-Start the localhost server
-
-```bash
-  cd frontend
-  npm start
-```
+![User List]()
 
 ## Deployed link
 
 ### Vercel Link
-
-[https://axen1.vercel.app/](https://axen1.vercel.app/)
 
 ## Show your support
 

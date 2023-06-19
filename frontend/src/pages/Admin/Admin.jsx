@@ -110,6 +110,7 @@ const Admin = () => {
               w={"20%"}
               h={"529px"}
               p={2}
+            
               height={""}
               background={
                 "url(https://cdn.vectorstock.com/i/preview-1x/45/27/abstract-gradient-background-blurred-purple-vector-21994527.jpg) center/cover no-repeat"

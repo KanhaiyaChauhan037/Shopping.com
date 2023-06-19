@@ -54,7 +54,7 @@ const AddressCard = ({ id, isOpen, onOpen, onClose, cancelRef }) => {
         <AlertDialogOverlay />
 
         <AlertDialogContent>
-          <AlertDialogHeader fontSize={"18px"}>Order Details</AlertDialogHeader>
+          <AlertDialogHeader textAlign={"center"} fontSize={"18px"}>Order Details</AlertDialogHeader>
           <AlertDialogCloseButton />
           <AlertDialogBody>
             {/* <Flex> */}

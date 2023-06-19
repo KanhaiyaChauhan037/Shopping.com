@@ -44,8 +44,6 @@ const SignIn = () => {
     setFormstate({...formstate,[e.target.name] : e.target.value})
   };
   const handleTheSubmit = () => {
-    // console.log("hi")
-    // console.log(formstate)
     if(formstate.email && formstate.password && formstate.username)
     {
       dispatch(register(formstate))

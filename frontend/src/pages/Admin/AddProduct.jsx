@@ -15,7 +15,6 @@ import AdminNav from "./AdminNav";
 
 const addProduct = async (formdata) => {
   let toki = localStorage.getItem("token");
-  // console.log("addproductData=>",data)
   const res = await axios.post(`${site}/products/addproduct`, formdata, {
     headers: {
       "Content-Type": "application/json",
@@ -27,7 +26,7 @@ const addProduct = async (formdata) => {
 };
 
 const initState = {
-  title: "",
+  title: "", price:"",
   price2: "",
   strik: "",
   desc1: "",
@@ -55,7 +54,7 @@ const AddProduct = () => {
   };
   const handleTheSubmit = () => {
     if (
-      formstate.title &&
+      formstate.title && formstate.price &&
       formstate.price2 &&
       formstate.desc1 &&
       formstate.desc2 &&
@@ -109,6 +108,7 @@ const AddProduct = () => {
         flexDirection={"column"}
         justifyContent={"center"}
         alignItems={"center"}
+        rowGap={"10px"}
       >
         <Input
           width={"500px"}
@@ -119,9 +119,16 @@ const AddProduct = () => {
         <Input
           width={"500px"}
           onChange={handleTheChange}
+          name="price"
+          placeholder="Product main price"
+        />
+        <Input
+          width={"500px"}
+          onChange={handleTheChange}
           name="price2"
           placeholder="Product discounted price"
         />
+
         <Input
           width={"500px"}
           onChange={handleTheChange}

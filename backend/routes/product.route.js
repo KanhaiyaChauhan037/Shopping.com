@@ -229,10 +229,9 @@ app.delete("/:id", adminMiddleware, async (req, res) => {
 app.put("/:id", adminMiddleware, async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, description, price } = req.body;
     const updatedItem = await Product.findByIdAndUpdate(
-      id,
-      { title, description, price },
+      { _id: id },
+      { ...req.body },
       { new: true }
     );
 
@@ -241,8 +240,8 @@ app.put("/:id", adminMiddleware, async (req, res) => {
     }
 
     res.send("Item updated successfully");
-  } catch (e) {
-    res.status(500).send(e.message);
+  } catch (error) {
+    res.status(500).send(error.message);
   }
 });
 

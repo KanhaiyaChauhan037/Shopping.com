@@ -1,11 +1,4 @@
-import {
-  Box,
-  Flex,
-  Image,
-  Text,
-  Icon,
-  Spinner,
-} from "@chakra-ui/react";
+import { Box, Flex, Image, Text, Icon, Spinner } from "@chakra-ui/react";
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
@@ -15,31 +8,29 @@ import { GoStar } from "react-icons/go";
 import { AiTwotoneQuestionCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
-const getData = async ({brand,price}) => {
-  const res = await axios.get(`${site}/products/mobile?brand=${brand}&price=${price}`);
+const getData = async ({ brand, price }) => {
+  const res = await axios.get(
+    `${site}/products/mobile?brand=${brand}&price=${price}`
+  );
   console.log(res.data);
   return res.data;
 };
 
-const MobileProduct = ({brand,price}) => {
+const MobileProduct = ({ brand, price }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     handleTheFetch();
-  }, [brand,price]);
+  }, [brand, price]);
 
   const handleTheFetch = async () => {
     setLoading(true);
-    const append = await getData({brand,price}).then((res) => setData(res));
+    const append = await getData({ brand, price }).then((res) => setData(res));
     setLoading(false);
   };
   console.log(data);
   return (
-    <Box
-      width={"82%"}
-      bgColor={"rgb(267,260,262)"}
-      boxShadow={"base"}
-    >
+    <Box width={"82%"} bgColor={"rgb(267,260,262)"} boxShadow={"base"}>
       {loading && (
         <Box>
           <Spinner
@@ -60,19 +51,23 @@ const MobileProduct = ({brand,price}) => {
           <Link key={i} to={`/singlepage/${post._id}`}>
             <Flex
               justifyContent={"space-between"}
-              
               border={"1px"}
               borderColor={"gray.200"}
               p={6}
             >
               <Flex gap={10}>
                 {/* Box 1 */}
-                <Box >
+                <Box>
                   <Image m={2} width={"100px"} src={post.img[0]} />
                 </Box>
                 {/* Box 2  */}
                 <Box w={"500px"}>
-                  <Text textAlign={"left"} noOfLines={1} fontSize={"14px"} fontWeight={"500"}>
+                  <Text
+                    textAlign={"left"}
+                    noOfLines={1}
+                    fontSize={"14px"}
+                    fontWeight={"500"}
+                  >
                     {post.title}
                   </Text>
                   <Box>
@@ -252,7 +247,6 @@ const MobileProduct = ({brand,price}) => {
             </Flex>
           </Link>
         ))}
-        
     </Box>
   );
 };

@@ -15,6 +15,8 @@ import {
   useToast,
   Button,
 } from "@chakra-ui/react";
+import Editmodal from "./Editmodal";
+import Showdata from "./Showdata";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { site } from "../../components/backend";
@@ -41,6 +43,7 @@ const deleteProduct = async (id) => {
 
 const AllProducts = () => {
   const [data, setData] = useState([]);
+  const [showmodal, setshowmodal] = useState("");
   const [loading, setLoading] = useState(false);
   const toast = useToast();
 
@@ -75,9 +78,15 @@ const AllProducts = () => {
           isClosable: true,
         })
       );
-      handleTheData()
+    handleTheData();
   };
   console.log("allproducts", data);
+    const handleshow = (_id) => {
+    const modald = data.find((el) => el._id === _id);
+    setshowmodal(modald);
+  };
+ 
+  
   return (
     <Box pt={10}>
       <AdminNav />
@@ -131,8 +140,10 @@ const AllProducts = () => {
                         overflow={"hidden"}
                         fontSize={"12px"}
                         fontWeight={"500"}
+                        onClick={() => handleshow(post._id)}
                       >
-                        {post.title}
+                        {/* {post.title} */}
+                        <Showdata title={post.title} data={showmodal} />
                       </Text>
                     </Td>
                     <Td color={"blue"}>
@@ -151,9 +162,7 @@ const AllProducts = () => {
                       </Button>
                     </Td>
                     <Td>
-                      <Button color={"white"} bgColor={"red.300"} size={"sm"}>
-                        Edit
-                      </Button>
+                      <Editmodal ID={post._id} data={data} />
                     </Td>
                   </Tr>
                 ))}

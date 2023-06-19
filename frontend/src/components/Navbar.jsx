@@ -39,6 +39,7 @@ import { logout } from "../redux/auth/auth.action";
 import { site } from "./backend";
 import axios from "axios";
 import SearchBox from "./SearchBox";
+import logo  from "../../src/logo.png";
 
 const Sec = [
   {
@@ -144,16 +145,17 @@ const Navbar = () => {
           bgColor={"purple.600"}
           position={"fixed"}
           width={"100%"}
+          height={"50px"}
           background={`url(https://i.postimg.cc/HxVWNcHZ/studio-background-concept-abstract-empty-light-gradient-purple-studio-room-background-product-plain.jpg)center/cover no-repeat`}
         >
-          <Flex p={1} justifyContent={"space-between"} mr={10} ml={10}>
+          <Flex p={1} justifyContent={"space-between"} alignItems={"center"} mr={10} ml={10}>
             {/* Box 1 */}
             <Flex gap={100}>
               <Box pl={"20px"}>
                 <Link to={"/"}>
                   <Image
-                    width={{ base: "50px", md: "80px", lg: "80px" }}
-                    src="https://i.postimg.cc/90Zh1SDT/Axen.png"
+                    width={{ base: "50px", md: "80px", lg: "90px" }}
+                    src={logo}
                   />
                 </Link>
               </Box>
@@ -168,7 +170,8 @@ const Navbar = () => {
                   <Input
                     value={text}
                     w={"420px"}
-                    placeholder="Search Product"
+                    h={"5vh"}
+                    placeholder="Search Products"
                     onChange={handleTheSearch}
                     onKeyPress={(e) => handleTheKeyPress(e)}
                   />
@@ -176,6 +179,7 @@ const Navbar = () => {
                     <Button
                       bg={"none"}
                       size="sm"
+                      mt={2}
                       _hover={{}}
                       onClick={handleClick}
                     >
@@ -276,7 +280,7 @@ const Navbar = () => {
       ) : (
         //   Mobile
         <Box
-        background={`url(https://i.postimg.cc/HxVWNcHZ/studio-background-concept-abstract-empty-light-gradient-purple-studio-room-background-product-plain.jpg)center/cover no-repeat`}
+          background={`url(https://i.postimg.cc/HxVWNcHZ/studio-background-concept-abstract-empty-light-gradient-purple-studio-room-background-product-plain.jpg)center/cover no-repeat`}
           zIndex={3}
           position={"fixed"}
           width={"100%"}
@@ -299,7 +303,7 @@ const Navbar = () => {
                   <Image
                     mt={1}
                     width={"80px"}
-                    src="https://i.postimg.cc/90Zh1SDT/Axen.png"
+                    src={logo}
                   />
                 </Box>
               </Link>
@@ -346,16 +350,16 @@ const Navbar = () => {
                 </Link>
               </Button>
               {/* Drawer  */}
-                <Button
-                  size={"md"}
-                  onClick={GoToCart}
-                  bg={"none"}
-                  mt={"2px"}
-                  _hover={{}}
-                  color={"white"}
-                >
-                  <Icon as={HiShoppingCart} w={6} h={6} />
-                </Button>
+              <Button
+                size={"md"}
+                onClick={GoToCart}
+                bg={"none"}
+                mt={"2px"}
+                _hover={{}}
+                color={"white"}
+              >
+                <Icon as={HiShoppingCart} w={6} h={6} />
+              </Button>
               <Drawer
                 isOpen={isOpen}
                 placement="left"
@@ -455,17 +459,17 @@ const Navbar = () => {
                         </Button>
                       </Link>
 
-                        <Button
-                          onClick={GoToCart}
-                          m={1}
-                          size="md"
-                          _hover={{}}
-                          bgColor={"purple.600"}
-                        >
-                          <Text color={"white"} fontSize={"13px"}>
-                            Cart
-                          </Text>
-                        </Button>
+                      <Button
+                        onClick={GoToCart}
+                        m={1}
+                        size="md"
+                        _hover={{}}
+                        bgColor={"purple.600"}
+                      >
+                        <Text color={"white"} fontSize={"13px"}>
+                          Cart
+                        </Text>
+                      </Button>
                       <Button
                         m={1}
                         size="md"
@@ -483,12 +487,12 @@ const Navbar = () => {
           </Flex>
         </Box>
       )}
-      <Collapse  in={show} animateOpacity>
+      <Collapse in={show} animateOpacity>
         <Box
-        ml={1}
-        zIndex={4}
-        position={"absolute"}
-        mt={10}
+          ml={1}
+          zIndex={4}
+          position={"absolute"}
+          mt={10}
           color="white"
           rounded="md"
           shadow="md"
@@ -512,7 +516,13 @@ const Navbar = () => {
                 <Button bg={"none"} size="sm" _hover={{}} onClick={handleClick}>
                   {data.length == 0 && <Icon as={FcSearch} w={4} h={4} />}
                   {data.length !== 0 && (
-                    <Icon onClick={handleTheEmpty} color={"black"} as={RxCross2} w={4} h={4} />
+                    <Icon
+                      onClick={handleTheEmpty}
+                      color={"black"}
+                      as={RxCross2}
+                      w={4}
+                      h={4}
+                    />
                   )}
                 </Button>
               </InputRightElement>

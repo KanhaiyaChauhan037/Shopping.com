@@ -11,15 +11,17 @@ import {
   Input,
   useToast,
 } from "@chakra-ui/react";
+import { Rozarpayment } from "../../Rozar/Rozarpayment";
 import axios from "axios";
 import { site } from "../../components/backend";
-
-const postOrder = async ({ cart, formstate,totalPrice }) => {
+import { useNavigate } from "react-router-dom";
+const postOrder = async ({ cart, formstate, totalPrice }) => {
   let toki = localStorage.getItem("token");
-  console.log(cart, formstate ,"totalprice",totalPrice);
+  console.log(cart, formstate, "totalprice", totalPrice);
+  
   let res = await axios.post(
     `${site}/admin/post_orders`,
-    { cart, ...formstate ,totalPrice },
+    { cart, ...formstate, totalPrice },
     {
       headers: {
         "Content-Type": "application/json",
@@ -48,7 +50,7 @@ const initState = {
   area: "",
   landmark: "",
   state: "",
-  date : new Date().toDateString() + " " + new Date().toTimeString()
+  date: new Date().toDateString() + " " + new Date().toTimeString(),
 };
 
 const LaptopCheckout = ({
@@ -61,7 +63,7 @@ const LaptopCheckout = ({
   cancelRef,
 }) => {
   const [formstate, setFormstate] = useState(initState);
-  const toast = useToast()
+  const toast = useToast();
   console.log("User cart=>", cart);
 
   const handleTheChange = (e) => {
@@ -74,21 +76,14 @@ const LaptopCheckout = ({
       formstate.pinCode &&
       formstate.houseNo &&
       formstate.area &&
-      formstate.landmark && 
+      formstate.landmark &&
       formstate.state
     ) {
+      console.log("formstate", formstate);
 
-      console.log("formstate",formstate)
-      postOrder({ cart, formstate ,totalPrice }).then((res) => console.log(res));
-      checkout().then((res) => toast({
-        title: res,
-        position: "top",
-        status: "warning",
-        duration: 1500,
-        isClosable: true,
-      }));
       handleTheFetch();
-      onClose()
+      Rozarpayment(totalPrice, handlepayment);
+      onClose();
     } else {
       toast({
         title: "Please Fill The Required Fields",
@@ -99,6 +94,20 @@ const LaptopCheckout = ({
       });
     }
     handleTheFetch();
+  };
+  const navigate = useNavigate();
+  const handlepayment = () => {
+    checkout().then((res) =>
+      toast({
+        title: res,
+        position: "top",
+        status: "warning",
+        duration: 2000,
+        isClosable: true,
+      })
+    );
+    postOrder({ cart, formstate, totalPrice }).then((res) => console.log(res));
+    navigate("/");
   };
   return (
     <>

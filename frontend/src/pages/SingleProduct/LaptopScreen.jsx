@@ -1,63 +1,97 @@
-import React from "react";
-import { Flex, Image, Box, Text, Icon, Button, useToast } from "@chakra-ui/react";
+import React, { useState } from "react";
+import {
+  Flex,
+  Image,
+  Box,
+  Text,
+  Icon,
+  Button,
+  useToast,
+} from "@chakra-ui/react";
 import { GoStar } from "react-icons/go";
 import { AiTwotoneQuestionCircle } from "react-icons/ai";
 import NormalNav from "../../components/NormalNav";
 import { HiShoppingCart } from "react-icons/hi";
-import {useSelector} from "react-redux"
-import {site} from "../../components/backend"
+import { useSelector } from "react-redux";
+import { site } from "../../components/backend";
 import axios from "axios";
 
+const postCart = async (data) => {
+  let toki = localStorage.getItem("token");
 
-const postCart = async(data)=>{
-    let toki = localStorage.getItem("token")
-    // console.log("postcart",toki)
-    // console.log("postcart data",data)
-    const res = await axios.post(`${site}/carts`,data,{
-      headers : {
-        "Content-Type" : "application/json",
-        "Authorization" : toki
-      }
-    })
-    console.log(res.data)
-  }
+  const res = await axios.post(`${site}/carts`, data, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: toki,
+    },
+  });
+  console.log(res.data);
+};
 
 const LaptopScreen = ({ data }) => {
-  const {isAuth,token} =  useSelector((store)=>store.auth)
-  const toast = useToast()
-  
-  const handleTheCart=(data)=>{
-    if(isAuth == false)
-    {
-        toast({
-            position : "top",
-            title: `Login to add the product in cart`,
-            status: "warning",
-            duration: 1500,
-            isClosable: true,
-          }) 
+  const [Imageurl, setimageurl] = useState(data.img[0]);
+  const { isAuth, token } = useSelector((store) => store.auth);
+  const toast = useToast();
+
+  const handleTheCart = (data) => {
+    if (isAuth == false) {
+      toast({
+        position: "top",
+        title: `Login to add the product in cart`,
+        status: "warning",
+        duration: 1500,
+        isClosable: true,
+      });
+    } else {
+      postCart(data);
+      toast({
+        position: "top",
+        title: `Product is add in your cart`,
+        status: "success",
+        duration: 1500,
+        isClosable: true,
+      });
     }
-    else{
-        postCart(data)
-        toast({
-            position : "top",
-            title: `Product is add in your cart`,
-            status: "success",
-            duration: 1500,
-            isClosable: true,
-          }) 
-    }
-  }
-  console.log("datasdfdf-",data)
+  };
+  console.log("datasdfdf-", data);
+
+  const handleImageHover = (imageUrl) => {
+    setimageurl(imageUrl);
+  };
+  const handleImageLeave = () => {
+    setimageurl(Imageurl);
+  };
   return (
     <Box>
       <NormalNav />
-      <Box>
+      <Flex w={"80%"} ml={"10px"} justifyContent={"space-between"}>
         {/* Product  */}
+        <Box
+          display={"flex"}
+          flexDirection="column"
+          justifyContent={"space-between"}
+          p={"10px"}
+          // border={"1px solid red"}
+        >
+          {data &&
+            data.img.map((el) => (
+              <Image
+                width={"70px"}
+                h="70px"
+                src={el}
+                // onClick={() => handleImageClick(el)}
+                onMouseEnter={() => handleImageHover(el)}
+                onMouseLeave={handleImageLeave}
+                cursor={"pointer"}
+                alt="imgs"
+              />
+            ))}
+        </Box>
         <Flex justifyContent={"center"} mt={5} mb={10} gap={10}>
-            {/* Product Image  */}
+          {/* Product Image  */}
+
           <Box>
-            <Image width={"200px"} m={10} src={data && data.img[0]} />
+            <Image width={"250px"} h="300px" m={10} src={Imageurl} />
           </Box>
           {/* Product details  */}
           <Box p={5}>
@@ -240,17 +274,31 @@ const LaptopScreen = ({ data }) => {
               </Box>
               {/* Button  */}
               <Flex mt={10} gap={3}>
-                <Button onClick={()=>handleTheCart(data)} _hover={{}} w={"150px"} bg={"none"} bgColor={"rgb(255,159,0)"}>
-                    <Flex gap={3} mt={"1px"}  >
-                        <Icon m={"1px"} h={4} w={4} color={"white"} as={HiShoppingCart}/>
-                        <Text fontWeight={500} color={"white"} fontSize={"13px"}>ADD TO CART</Text>
-                    </Flex>
+                <Button
+                  onClick={() => handleTheCart(data)}
+                  _hover={{}}
+                  w={"150px"}
+                  bg={"none"}
+                  bgColor={"rgb(255,159,0)"}
+                >
+                  <Flex gap={3} mt={"1px"}>
+                    <Icon
+                      m={"1px"}
+                      h={4}
+                      w={4}
+                      color={"white"}
+                      as={HiShoppingCart}
+                    />
+                    <Text fontWeight={500} color={"white"} fontSize={"13px"}>
+                      ADD TO CART
+                    </Text>
+                  </Flex>
                 </Button>
               </Flex>
             </Box>
           </Box>
         </Flex>
-      </Box>
+      </Flex>
     </Box>
   );
 };
