@@ -5,11 +5,11 @@ const userRouter = require("./routes/users.route")
 const productRouter = require("./routes/product.route")
 const cartRouter = require("./routes/cart.route")
 const app = express()
-require("dotenv").config()
+// require("dotenv").config()
 
 const connect = require("./config/db")
 const addressRouter = require("./routes/address.route")
-const P = process.env.PORT;
+// const P = process.env.PORT;
 
 app.use(cors())
 app.use(express.json());
@@ -23,8 +23,8 @@ app.get("/", (req, res) => {
 })
 
 var instance = new Razorpay({
-    key_id: process.env.ROZAR_ID,
-    key_secret: process.env.ROZAR_SECRET,
+    key_id: "rzp_test_rOkIYp7M7TKQAg",
+    key_secret: "HbYKn5Zw2NezeRDvxYAq0Mwe",
 });
 
 app.post("/rozar-order", async (req, res) => {
@@ -44,7 +44,7 @@ app.post("/rozar-order", async (req, res) => {
 
 
 
-app.listen(P, async () => {
+app.listen(5501, async () => {
     await connect()
-    console.log(`server is started on http://localhost:${P}`)
+    console.log(`server is started on http://localhost:${5501}`)
 })
