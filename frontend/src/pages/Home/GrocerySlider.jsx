@@ -139,22 +139,9 @@ const GrocerySlider = () => {
             {groceryData.length > 0 &&
               groceryData.map((post, i) => (
                 <Link to={`/singlepage/${post._id}`}>
-                  <Box
-                    h={200}
-                    pl={10}
-                    pr={10}
-                    key={i}
-                    pt={10}
-                    position="absolute"
-                    transition="opacity 0.3s ease-in-out"
-                    _hover={{ opacity: 1 }}
-                  >
+                  <Box h={200} pl={10} pr={10} key={i} pt={10}>
                     <Center h={"100px"}>
-                      <Image
-                        width={"90px"}
-                        src={post.img[0]}
-                        transform="scale(1.2)"
-                      />
+                      <Image width={"90px"} src={post.img[0]} />
                     </Center>
                     <Text
                       mt={5}
