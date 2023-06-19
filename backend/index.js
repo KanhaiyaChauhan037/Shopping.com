@@ -12,7 +12,7 @@ const addressRouter = require("./routes/address.route")
 const P = process.env.PORT;
 
 app.use(cors())
-// app.use(express.json());
+app.use(express.json());
 app.use("/users", userRouter)
 app.use("/products", productRouter)
 app.use("/carts", cartRouter)
