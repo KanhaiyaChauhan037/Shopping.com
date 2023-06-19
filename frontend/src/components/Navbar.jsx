@@ -154,7 +154,7 @@ const Navbar = () => {
               <Box pl={"20px"}>
                 <Link to={"/"}>
                   <Image
-                    width={{ base: "50px", md: "80px", lg: "90px" }}
+                    width={{ base: "50px", md: "80px", lg: "100px" }}
                     src={logo}
                   />
                 </Link>
@@ -171,7 +171,8 @@ const Navbar = () => {
                     value={text}
                     w={"420px"}
                     h={"5vh"}
-                    placeholder="Search Products"
+                    fontSize={"16px"}
+                    placeholder="Search Products , title , brand..."
                     onChange={handleTheSearch}
                     onKeyPress={(e) => handleTheKeyPress(e)}
                   />
