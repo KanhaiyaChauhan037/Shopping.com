@@ -20,6 +20,7 @@ import {
   useToast,
   Center,
   Collapse,
+  Tooltip,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { FcSearch } from "react-icons/fc";
@@ -39,7 +40,7 @@ import { logout } from "../redux/auth/auth.action";
 import { site } from "./backend";
 import axios from "axios";
 import SearchBox from "./SearchBox";
-import logo  from "../../src/logo.png";
+import logo from "../../src/logo.png";
 
 const Sec = [
   {
@@ -102,7 +103,7 @@ const Navbar = () => {
     if (isAuth) {
       return navigate("/cart");
     } else {
-       return toast({
+      return toast({
         title: "Required Login",
         position: "top",
         status: "warning",
@@ -148,7 +149,13 @@ const Navbar = () => {
           height={"50px"}
           background={`url(https://i.postimg.cc/HxVWNcHZ/studio-background-concept-abstract-empty-light-gradient-purple-studio-room-background-product-plain.jpg)center/cover no-repeat`}
         >
-          <Flex p={1} justifyContent={"space-between"} alignItems={"center"} mr={10} ml={10}>
+          <Flex
+            p={1}
+            justifyContent={"space-between"}
+            alignItems={"center"}
+            mr={10}
+            ml={10}
+          >
             {/* Box 1 */}
             <Flex gap={100}>
               <Box pl={"20px"}>
@@ -259,7 +266,9 @@ const Navbar = () => {
                       </Text>
                     )}
                   </Link>
+
                   {role == "User" && <Text fontSize={"13px"}>User</Text>}
+
                   <Link to={"/signin"}>
                     {!role && <Text fontSize={"13px"}>Sign-In</Text>}
                   </Link>
@@ -301,11 +310,7 @@ const Navbar = () => {
               </Box>
               <Link to={"/"}>
                 <Box>
-                  <Image
-                    mt={1}
-                    width={"80px"}
-                    src={logo}
-                  />
+                  <Image mt={1} width={"80px"} src={logo} />
                 </Box>
               </Link>
             </Flex>

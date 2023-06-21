@@ -42,6 +42,13 @@ const Login = () => {
   console.log("isauth", isAuth);
   useEffect(() => {
     if (isAuth) {
+        toast({
+          title: "Login successfully",
+          position: "top",
+          status: "success",
+          duration: 2000,
+          isClosable: true,
+        });
       navigate("/");
     }
   }, [isAuth]);
