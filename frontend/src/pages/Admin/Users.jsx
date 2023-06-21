@@ -110,7 +110,7 @@ const Users = () => {
               {loading == false && (
                 <Tr>
                   <Th>User ID</Th>
-                  <Th>user Name</Th>
+                  <Th>user Email</Th>
                   <Th>role</Th>
                   <Th>username</Th>
                   <Th>Delete</Th>
