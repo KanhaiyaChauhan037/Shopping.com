@@ -1,6 +1,8 @@
 # Shopping 
+<p align="center">
+  <img src="https://github.com/KanhaiyaChauhan037/E-commerce/assets/105916244/558169c8-c12d-4116-b6aa-167212dadb5a"/>
+</p>
 
-![Logo]
 
 <h3 align="center">It's a Full Stack Ecommerce web application with all the major functionalities</h3>
 
@@ -53,6 +55,7 @@ Shopping
 - Admin all users showing page
 - Admin all products list page
 - Admin add product form page
+- Admin product edit form page
 - Admin Order's list page
 
 ## Screenshots
