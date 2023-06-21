@@ -35,7 +35,7 @@
   <img width="100" src="https://badges.genua.fr/badge/%F0%9F%94%BA-vercel-black" alt="vercel" />
 </p>
 
-<h3 align="center"><a href=" "><strong>Want to see live preview »</strong></a></h3>
+<h3 align="center"><a href="https://shoppingbykc.vercel.app/"><strong>Want to see live preview »</strong></a></h3>
 
 Shopping
 
