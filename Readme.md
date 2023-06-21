@@ -63,7 +63,8 @@ This is the main landing page of our website. Here, if you clicked on any naviga
 
 All pages are responsive.
 
-![landing_page]()
+![landing_page](![image](https://github.com/KanhaiyaChauhan037/E-commerce/assets/105916244/7c999c22-934b-4172-b460-9d8d86185727)
+)
 
 ### Sign up Page -
 
