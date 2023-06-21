@@ -63,64 +63,88 @@ This is the main landing page of our website. Here, if you clicked on any naviga
 
 All pages are responsive.
 
-![landing_page](![image](https://github.com/KanhaiyaChauhan037/E-commerce/assets/105916244/7c999c22-934b-4172-b460-9d8d86185727)
-)
+
+![image](https://github.com/KanhaiyaChauhan037/E-commerce/assets/105916244/d634933e-0be9-4f89-a45f-8577bd8d7b07)
+
 
 ### Sign up Page -
 
 On this page, you can register a user. If the user is already registered, you can simply sign in by providing valid details of the user.
 
-![signup]()
+![image](https://github.com/KanhaiyaChauhan037/E-commerce/assets/105916244/3ff62c03-a419-4219-acc1-9e2608bbc59e)
+
 
 ### Login Page -
 
 On this page, you have to login with your registered email and password .you can simply sign in by providing valid details of the user.
 
-![Login]()
+![image](https://github.com/KanhaiyaChauhan037/E-commerce/assets/105916244/f021a3fb-2b03-4dea-80da-cff49317afe6)
+
 
 ### Products Page -
 
 Here users can browse, `filter` the product based on `brand and discound`, `sort` by `price or rating`, filter and sort will work togather and add items to the cart by clicking on the `Add to Cart` button.
 
-![product]()
+![image](https://github.com/KanhaiyaChauhan037/E-commerce/assets/105916244/58eafdab-6b4c-4c07-a642-50f5565bbfad)
+
 
 ### SingleProduct Page -
 
-![product_details]()
+![image](https://github.com/KanhaiyaChauhan037/E-commerce/assets/105916244/503594c8-8bd4-427f-9317-3524a601a12b)
+
 
 ### Cart Page -
 
 Here all the products added to the cart will be shown. On this page, By Clicking on add to cart your cart added successfully.
 
-![cart]()
+![image](https://github.com/KanhaiyaChauhan037/E-commerce/assets/105916244/1888841d-3dae-4673-96f6-399a5d4ddeb6)
+
+
+### Payment othentication page -
+
+Here Razorpay payment othentication after click a checkout button and complete your payment then your order is placed. 
+
+![image](https://github.com/KanhaiyaChauhan037/E-commerce/assets/105916244/7bf5e15a-5906-49bb-8386-e61f97c62be2)
+
+### Admin HomePage -
+
+Here show all category and graph for understanding.
+
+![image](https://github.com/KanhaiyaChauhan037/E-commerce/assets/105916244/d8bc3c0e-5650-4928-8e93-d52d504f267f)
+
 
 ### Admin Order List Page -
 
 On this page, you can see your order details. you can `remove` the item from cart and also, `increase` or `decrease` count. By clicking on the payment button you will be redirect to the checkout page.
 
-![Order List]()
+![image](https://github.com/KanhaiyaChauhan037/E-commerce/assets/105916244/813b278e-5aaf-4961-99dc-dd6542cd467b)
 
 ### Admin All User's List Page -
 
 On This Page there is info about the site....
 
-![User List]()
+![image](https://github.com/KanhaiyaChauhan037/E-commerce/assets/105916244/650e34e2-7e7e-4aa0-be0d-ddffdac1ab0b)
+
 
 ### Admin Add Product Form Page -
 
 On This Page there is info about the site....
 
-![User List]()
+![image](https://github.com/KanhaiyaChauhan037/E-commerce/assets/105916244/98e4a5c1-823d-4d02-abd4-0aa3cd38afb7)
+
 
 ### Admin All Product List Page -
 
 On This Page there is info about the site....
 
-![User List]()
+![image](https://github.com/KanhaiyaChauhan037/E-commerce/assets/105916244/721f4612-229d-429b-9615-efb2c0aeb034)
+
 
 ## Deployed link
+https://shoppingbykc.vercel.app/
 
 ### Vercel Link
+https://shoppingbykc.vercel.app/
 
 ## Show your support
 
