@@ -125,7 +125,7 @@ const LaptopCart = () => {
 
   return (
     <Box pt={2} mb={10}>
-      <Flex mb={2} justifyContent={"center"}>
+      <Flex mb={5} mt="5px" justifyContent={"center"}>
         <Image w={"80px"} src="https://i.postimg.cc/VsRDYtym/cart-logo.jpg" />
         <Image
           mt={3}
