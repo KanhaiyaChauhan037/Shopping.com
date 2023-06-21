@@ -1,6 +1,6 @@
 # Shopping 
 <p align="center">
-  <img src="https://github.com/KanhaiyaChauhan037/E-commerce/assets/105916244/558169c8-c12d-4116-b6aa-167212dadb5a"/>
+  <img width="100%" src="https://github.com/KanhaiyaChauhan037/E-commerce/assets/105916244/558169c8-c12d-4116-b6aa-167212dadb5a"/>
 </p>
 
 
