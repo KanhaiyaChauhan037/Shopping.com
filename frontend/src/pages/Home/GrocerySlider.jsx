@@ -185,7 +185,7 @@ const GrocerySlider = () => {
                       transition="transform 0.3s"
                       _hover={{ transform: "scale(1.2)" }}
                     >
-                      <Image width={"90px"} src={post.img[0]} />
+                      <Image width={"100px"} h="100px" src={post.img[0]} />
                     </Center>
                     <Text
                       mt={5}
