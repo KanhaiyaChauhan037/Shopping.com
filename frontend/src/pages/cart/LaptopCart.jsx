@@ -133,7 +133,6 @@ const LaptopCart = () => {
           h={"40px"}
           src="https://i.postimg.cc/pXCJZgQD/shopping-Png.png"
         />
-        
       </Flex>
       <Flex justifyContent={"center"}>
         {/* Products  */}

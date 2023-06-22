@@ -81,8 +81,10 @@ const getData = async (text) => {
   return data;
 };
 
+
 const Navbar = () => {
   const [show, setShow] = React.useState(false);
+  const [carta, setcarta] = useState([]);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   const [isLargerThan1280] = useMediaQuery("(min-width: 1080px)");
@@ -136,7 +138,9 @@ const Navbar = () => {
   };
   console.log(data);
 
-  const handleClick = () => {};
+  const handleClick = () => { };
+
+
   return (
     <Box>
       {isLargerThan1280 ? (
@@ -281,7 +285,9 @@ const Navbar = () => {
                   color={"white"}
                 >
                   <Icon as={HiShoppingCart} />
-                  <Text fontSize={"13px"}>Cart </Text>
+                  <Text fontSize={"13px"}>
+                    Cart
+                  </Text>
                 </Button>
               </Flex>
             </Box>

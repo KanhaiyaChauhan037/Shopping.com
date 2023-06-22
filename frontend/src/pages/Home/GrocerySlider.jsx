@@ -107,7 +107,11 @@ const GrocerySlider = () => {
               mobileData.map((post, i) => (
                 <Link to={`/singlepage/${post._id}`}>
                   <Box h={200} pl={10} pr={10} key={i} pt={10}>
-                    <Center h={"100px"}>
+                    <Center
+                      h={"100px"}
+                      transition="transform 0.3s"
+                      _hover={{ transform: "scale(1.2)" }}
+                    >
                       <Image width={"90px"} src={post.img[0]} />
                     </Center>
                     <Text
@@ -140,7 +144,11 @@ const GrocerySlider = () => {
               groceryData.map((post, i) => (
                 <Link to={`/singlepage/${post._id}`}>
                   <Box h={200} pl={10} pr={10} key={i} pt={10}>
-                    <Center h={"100px"}>
+                    <Center
+                      h={"100px"}
+                      transition="transform 0.3s"
+                      _hover={{ transform: "scale(1.2)" }}
+                    >
                       <Image width={"90px"} src={post.img[0]} />
                     </Center>
                     <Text
@@ -172,7 +180,11 @@ const GrocerySlider = () => {
               homeData.map((post, i) => (
                 <Link to={`/singlepage/${post._id}`}>
                   <Box h={200} pl={10} pr={10} key={i} pt={10}>
-                    <Center h={"100px"}>
+                    <Center
+                      h={"100px"}
+                      transition="transform 0.3s"
+                      _hover={{ transform: "scale(1.2)" }}
+                    >
                       <Image width={"90px"} src={post.img[0]} />
                     </Center>
                     <Text
@@ -204,7 +216,11 @@ const GrocerySlider = () => {
               data.map((post, i) => (
                 <Link to={`/singlepage/${post._id}`}>
                   <Box h={200} pl={10} pr={10} key={i}>
-                    <Center h={"130px"}>
+                    <Center
+                      h={"130px"}
+                      transition="transform 0.3s"
+                      _hover={{ transform: "scale(1.2)" }}
+                    >
                       <Image width={"100px"} src={post.img[0]} />
                     </Center>
                     <Text
