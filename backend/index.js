@@ -5,7 +5,7 @@ const userRouter = require("./routes/users.route")
 const productRouter = require("./routes/product.route")
 const cartRouter = require("./routes/cart.route")
 const app = express()
-// require("dotenv").config()
+require("dotenv").config()
 
 const connect = require("./config/db")
 const addressRouter = require("./routes/address.route")
@@ -23,8 +23,8 @@ app.get("/", (req, res) => {
 })
 
 var instance = new Razorpay({
-    key_id: "rzp_test_rOkIYp7M7TKQAg",
-    key_secret: "HbYKn5Zw2NezeRDvxYAq0Mwe",
+    key_id: process.env.key_id,
+    key_secret: process.env.key_secret ,
 });
 
 app.post("/rozar-order", async (req, res) => {
